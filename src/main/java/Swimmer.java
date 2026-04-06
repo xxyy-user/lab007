@@ -45,13 +45,13 @@ public class Swimmer implements Comparable<Swimmer> {
         .stream()
         .mapToDouble(Double :: doubleValue)
         .average()
-        .orElse(0.0);
+        .orElse(Double.MAX_VALUE);
 
     double avgTimeOther = otherSwimmer.freestyle50mTimes
         .stream()
         .mapToDouble(Double :: doubleValue)
         .average()
-        .orElse(0.0);
+        .orElse(Double.MAX_VALUE);
 
     return Double.compare(avgTimeThis, avgTimeOther);
   }
